@@ -18,5 +18,24 @@
 - Connecter le moteur droit sur M1
 - Connecter le moteur gauche sur M2
 
+## Modifier la valeur de la vitesse
+- Ouvrir le code dans une IDE et ouvrir `src/main.cpp`
+- Modifier les valeures des puissances de la ligne 13 à 22
+```cpp
+// =========   puissance (0-62)   =========   
+const int puissance_avant = 40; 
+const int puissance_recul = 30;
+
+const int puissance_rotation = 20;
+
+const int puissance_tourne_large = 30;
+const int puissance_tourne_court = 20;
+
+const int puissance_tourne_recul_large = 30;
+const int puissance_tourne_recul_court = 20;
+// ==========================================
+```
+- Televerser le code sur l'ESP32
+
 ## Github
 [GitHub](https://github.com/Kroncks/R2D2Esp)
