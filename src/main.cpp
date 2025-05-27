@@ -35,6 +35,9 @@ void handleReadme() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>R2D2</title>
     </head><body>
+
+    <button onclick="window.location.href = '/';">Home</button>
+
     <!-- README CONVERTI AVEC https://dillinger.io/ -->
 
     <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Controle_du_R2D2_par_ESP32_0"></a>Controle du R2D2 par ESP32</h1>
@@ -58,8 +61,10 @@ void handleReadme() {
     <h2 class="code-line" data-line-start=16 data-line-end=17 ><a id="Connexion_des_moteurs_au_Sabertooth_16"></a>Connexion des moteurs au Sabertooth</h2>
     <ul>
     <li class="has-line-data" data-line-start="17" data-line-end="18">Connecter le moteur droit sur M1</li>
-    <li class="has-line-data" data-line-start="18" data-line-end="19">Connecter le moteur gauche sur M2</li>
+    <li class="has-line-data" data-line-start="18" data-line-end="20">Connecter le moteur gauche sur M2</li>
     </ul>
+    <h2 class="code-line" data-line-start=20 data-line-end=21 ><a id="Github_20"></a>Github</h2>
+    <p class="has-line-data" data-line-start="21" data-line-end="22"><a href="https://github.com/Kroncks/R2D2Esp">GitHub</a></p>
 
     <!-- FIN README -->
     </body></html>
@@ -77,6 +82,7 @@ void handleRoot() {
       <title>R2D2</title>
     </head><body>
     <h1>Bonsoir jeune Padawan !</h1>
+    <button onclick="window.location.href = '/readme';">Readme</button>
     <button onclick="window.location.href = '/controls';">Controles</button>
     <p>R2D2 roulera-t-il pour le 3 juin ?</p>
     <p>Ayaaaaaaa...</p>
