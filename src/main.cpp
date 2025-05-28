@@ -9,10 +9,13 @@ const char* ssid = "R2D2";
 const char* password = "BONSOIRS";     
 
 
-// =========   puissance (0-62)   =========   
+// =========   puissance (0-62)   =========
+
+// Avancer / Reculer
 const int puissance_avant = 40; // puissance pour avancer droit
 const int puissance_recul = 30; // puissance pour reculler droit
 
+// Rotation
 const int puissance_rotation = 20; // puissance des roues pour tourner sur soi meme 
 
 // tourner en diagonale 
@@ -21,7 +24,8 @@ const int puissance_tourne_court = 20; // puissance de la roue intenre au virage
 
 // reculer en diagonale 
 const int puissance_tourne_recul_large = 30; // puissance de la roue externe au virage
-const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au virage 
+const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au virage
+
 // ==========================================
 
 
