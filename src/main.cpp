@@ -440,39 +440,42 @@ void handleComand() {
     if (server.hasArg("command")) {          // Vérifie si une commande a été envoyée
         String command = server.arg("command");  // Récupère la commande
 
+        // les moteurs sont inversés, merci la meca 
+
+
         if (command == "test"){ // petit test avec 
             digitalWrite(LED,HIGH);
         } else if (command == "diaggauche") {           // Commande pour tourner diagonale gauche
-            Serial2.write(65+puissance_tourne_large);  // Moteur 1 avance +
-            Serial2.write(193+puissance_tourne_court); // Moteur 2 avance -
+            Serial2.write(63-puissance_tourne_large);  // Moteur 1 avance +
+            Serial2.write(191-puissance_tourne_court); // Moteur 2 avance -
 
         } else if (command == "gauche") {           // Commande pour tourner à gauche
-            Serial2.write(65+puissance_rotation);  // Moteur 1 avance
-            Serial2.write(191-puissance_rotation); // Moteur 2 recule
+            Serial2.write(63-puissance_rotation);  // Moteur 1 avance
+            Serial2.write(193+puissance_rotation); // Moteur 2 recule
 
         }else if (command == "diagdroite") {           // Commande pour tourner diagonale droite
-            Serial2.write(65+puissance_tourne_court);  // Moteur 1 avance -
-            Serial2.write(193+puissance_tourne_large); // Moteur 2 avance +
+            Serial2.write(63-puissance_tourne_court);  // Moteur 1 avance -
+            Serial2.write(191-puissance_tourne_large); // Moteur 2 avance +
 
         } else if (command == "droite") {    // Commande pour tourner à droite
-            Serial2.write(63-puissance_rotation);  // Moteur 1 recule 
-            Serial2.write(193+puissance_rotation); // Moteur 2 avance 
+            Serial2.write(65+puissance_rotation);  // Moteur 1 recule 
+            Serial2.write(191-puissance_rotation); // Moteur 2 avance 
 
         } else if (command == "reculer") {   // Commande pour reculer
-            Serial2.write(63-puissance_recul);  // Moteur 1 recule
-            Serial2.write(191-puissance_recul); // Moteur 2 recule
+            Serial2.write(65+puissance_recul);  // Moteur 1 recule
+            Serial2.write(193+puissance_recul); // Moteur 2 recule
 
         } else if (command == "recdroite") {   // Commande pour reculer droite diag
-            Serial2.write(63-puissance_tourne_recul_court);  // Moteur 1 recule -
-            Serial2.write(191-puissance_tourne_recul_large); // Moteur 2 recule +
+            Serial2.write(65+puissance_tourne_recul_court);  // Moteur 1 recule -
+            Serial2.write(193+puissance_tourne_recul_large); // Moteur 2 recule +
 
         }else if (command == "recgauche") {   // Commande pour diagonale gauche reculer
-            Serial2.write(63-puissance_tourne_recul_large);  // Moteur 1 recule +
-            Serial2.write(191-puissance_tourne_recul_court); // Moteur 2 recule -
+            Serial2.write(65+puissance_tourne_recul_large);  // Moteur 1 recule +
+            Serial2.write(193+puissance_tourne_recul_court); // Moteur 2 recule -
 
         }else if (command == "avancer") {   // Commande pour avancer
-            Serial2.write(65+puissance_avant);  // Moteur 1 avance 
-            Serial2.write(193+puissance_avant); // Moteur 2 avance
+            Serial2.write(63-puissance_avant);  // Moteur 1 avance 
+            Serial2.write(191-puissance_avant); // Moteur 2 avance
 
         } else if (command == "stop") {      // Commande pour arrêter les moteurs
             Serial2.write(64);  // Stop moteur 1
