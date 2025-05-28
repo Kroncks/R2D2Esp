@@ -37,9 +37,37 @@ WebServer server(80);
 void handleReadme() {
   server.send(200, "text/html", R"rawliteral(
     <!DOCTYPE html><html lang="fr"><head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>R2D2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Readme</title>
+  <style>
+      
+      .hljs-comment { color: #6a9955; font-style: italic; }
+      .hljs-keyword { color: #569cd6; font-weight: bold; }
+      .hljs-number { color: #b5cea8; }
+      .hljs-string { color: #d69d85; }
+      .hljs-function { color: #dcdcaa; }
+      .hljs-title { color: #4ec9b0; }
+      .hljs-variable { color: #9cdcfe; }
+      .hljs-attr { color: #9cdcfe; }
+    
+
+    pre {
+    background-color: #f5f5f5; /* gris clair */
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    width: fit-content; 
+    font-family: Consolas, monospace;
+    font-size: 0.9em;
+  }
+
+  code.language-cpp {
+    color: #000; /* ou garde #9cdcfe si tu veux la couleur bleue */
+  }
+    
+    </style> 
     </head><body>
 
     <button onclick="window.location.href = '/';">Home</button>
@@ -72,9 +100,11 @@ void handleReadme() {
     <h2 class="code-line" data-line-start=20 data-line-end=21 ><a id="Modifier_la_valeur_de_la_vitesse_20"></a>Modifier la valeur de la vitesse</h2>
     <ul>
     <li class="has-line-data" data-line-start="21" data-line-end="22">Ouvrir le code dans une IDE et ouvrir <code>src/main.cpp</code></li>
-    <li class="has-line-data" data-line-start="22" data-line-end="23">Modifier les valeures des puissances de la ligne 13 à 22</li>
+    <li class="has-line-data" data-line-start="22" data-line-end="23">Modifier les valeures des puissances de la ligne 13 à 28</li>
     </ul>
-    <pre><code class="has-line-data" data-line-start="24" data-line-end="43" class="language-cpp"><span class="hljs-comment">// =========   puissance (0-62)   =========</span>
+    <pre><code class="language-cpp has-line-data" data-line-start="24" data-line-end="43">
+    
+    <span class="hljs-comment">// =========   puissance (0-62)   =========</span>
 
     <span class="hljs-comment">// Avancer / Reculer</span>
     <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_avant = <span class="hljs-number">40</span>; <span class="hljs-comment">// puissance pour avancer droit</span>
