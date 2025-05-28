@@ -74,24 +74,30 @@ void handleReadme() {
     <li class="has-line-data" data-line-start="21" data-line-end="22">Ouvrir le code dans une IDE et ouvrir <code>src/main.cpp</code></li>
     <li class="has-line-data" data-line-start="22" data-line-end="23">Modifier les valeures des puissances de la ligne 13 à 22</li>
     </ul>
-    <pre><code class="has-line-data" data-line-start="24" data-line-end="37" class="language-cpp"><span class="hljs-comment">// =========   puissance (0-62)   =========   </span>
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_avant = <span class="hljs-number">40</span>; 
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_recul = <span class="hljs-number">30</span>;
+    <pre><code class="has-line-data" data-line-start="24" data-line-end="43" class="language-cpp"><span class="hljs-comment">// =========   puissance (0-62)   =========</span>
 
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_rotation = <span class="hljs-number">20</span>;
+    <span class="hljs-comment">// Avancer / Reculer</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_avant = <span class="hljs-number">40</span>; <span class="hljs-comment">// puissance pour avancer droit</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_recul = <span class="hljs-number">30</span>; <span class="hljs-comment">// puissance pour reculler droit</span>
 
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_large = <span class="hljs-number">30</span>;
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_court = <span class="hljs-number">20</span>;
+    <span class="hljs-comment">// Rotation</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_rotation = <span class="hljs-number">20</span>; <span class="hljs-comment">// puissance des roues pour tourner sur soi meme </span>
 
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_recul_large = <span class="hljs-number">30</span>;
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_recul_court = <span class="hljs-number">20</span>;
+    <span class="hljs-comment">// tourner en diagonale </span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_large = <span class="hljs-number">30</span>; <span class="hljs-comment">// puissance de la roue externe au virage </span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_court = <span class="hljs-number">20</span>; <span class="hljs-comment">// puissance de la roue intenre au virage </span>
+
+    <span class="hljs-comment">// reculer en diagonale </span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_recul_large = <span class="hljs-number">30</span>; <span class="hljs-comment">// puissance de la roue externe au virage</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> puissance_tourne_recul_court = <span class="hljs-number">20</span>; <span class="hljs-comment">// puissance de la roue intenre au virage</span>
+
     <span class="hljs-comment">// ==========================================</span>
     </code></pre>
     <ul>
-    <li class="has-line-data" data-line-start="37" data-line-end="39">Televerser le code sur l’ESP32</li>
+    <li class="has-line-data" data-line-start="43" data-line-end="45">Televerser le code sur l’ESP32</li>
     </ul>
-    <h2 class="code-line" data-line-start=39 data-line-end=40 ><a id="Github_39"></a>Github</h2>
-    <p class="has-line-data" data-line-start="40" data-line-end="41"><a href="https://github.com/Kroncks/R2D2Esp">GitHub</a></p>
+    <h2 class="code-line" data-line-start=45 data-line-end=46 ><a id="Github_45"></a>Github</h2>
+    <p class="has-line-data" data-line-start="46" data-line-end="47"><a href="https://github.com/Kroncks/R2D2Esp">GitHub</a></p>
 
     <!-- FIN README -->
     </body></html>
