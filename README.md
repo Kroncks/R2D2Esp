@@ -20,7 +20,7 @@
 
 ## Modifier la valeur de la vitesse
 - Ouvrir le code dans une IDE et ouvrir `src/main.cpp`
-- Modifier les valeures des puissances de la ligne 13 à 22
+- Modifier les valeures des puissances de la ligne 13 à 28
 ```cpp
 // =========   puissance (0-62)   =========
 
