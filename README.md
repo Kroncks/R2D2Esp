@@ -22,17 +22,23 @@
 - Ouvrir le code dans une IDE et ouvrir `src/main.cpp`
 - Modifier les valeures des puissances de la ligne 13 à 22
 ```cpp
-// =========   puissance (0-62)   =========   
-const int puissance_avant = 40; 
-const int puissance_recul = 30;
+// =========   puissance (0-62)   =========
 
-const int puissance_rotation = 20;
+// Avancer / Reculer
+const int puissance_avant = 40; // puissance pour avancer droit
+const int puissance_recul = 30; // puissance pour reculler droit
 
-const int puissance_tourne_large = 30;
-const int puissance_tourne_court = 20;
+// Rotation
+const int puissance_rotation = 20; // puissance des roues pour tourner sur soi meme 
 
-const int puissance_tourne_recul_large = 30;
-const int puissance_tourne_recul_court = 20;
+// tourner en diagonale 
+const int puissance_tourne_large = 30; // puissance de la roue externe au virage 
+const int puissance_tourne_court = 20; // puissance de la roue intenre au virage 
+
+// reculer en diagonale 
+const int puissance_tourne_recul_large = 30; // puissance de la roue externe au virage
+const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au virage
+
 // ==========================================
 ```
 - Televerser le code sur l'ESP32
