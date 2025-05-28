@@ -10,16 +10,18 @@ const char* password = "BONSOIRS";
 
 
 // =========   puissance (0-62)   =========   
-const int puissance_avant = 40; 
-const int puissance_recul = 30;
+const int puissance_avant = 40; // puissance pour avancer droit
+const int puissance_recul = 30; // puissance pour reculler droit
 
-const int puissance_rotation = 20;
+const int puissance_rotation = 20; // puissance des roues pour tourner sur soi meme 
 
-const int puissance_tourne_large = 30;
-const int puissance_tourne_court = 20;
+// tourner en diagonale 
+const int puissance_tourne_large = 30; // puissance de la roue externe au virage 
+const int puissance_tourne_court = 20; // puissance de la roue intenre au virage 
 
-const int puissance_tourne_recul_large = 30;
-const int puissance_tourne_recul_court = 20;
+// reculer en diagonale 
+const int puissance_tourne_recul_large = 30; // puissance de la roue externe au virage
+const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au virage 
 // ==========================================
 
 
@@ -86,7 +88,7 @@ void handleReadme() {
     </ul>
     <h2 class="code-line" data-line-start=39 data-line-end=40 ><a id="Github_39"></a>Github</h2>
     <p class="has-line-data" data-line-start="40" data-line-end="41"><a href="https://github.com/Kroncks/R2D2Esp">GitHub</a></p>
-    
+
     <!-- FIN README -->
     </body></html>
   )rawliteral");
