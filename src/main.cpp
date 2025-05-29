@@ -180,12 +180,30 @@ void handleControls() {
   <title>Contrôle du Robot</title>
   <style>
     /* Réinitialisation des marges et du padding */
-    html, body {
+    html{
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
     }
+
+    body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #007179, #02B8C5);
+            color: white;
+            text-align: center;
+            touch-action: none; /* Empêche le zoom et le scroll */
+                  -webkit-user-select: none; /*empêche la sélection de texte */
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user_select: none; 
+        }
     
     /* Fond fixe */
     .background {
