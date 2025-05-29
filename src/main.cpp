@@ -61,10 +61,11 @@ void handleReadme() {
     width: fit-content; 
     font-family: Consolas, monospace;
     font-size: 0.9em;
+    padding-right: 45px;
   }
 
   code.language-cpp {
-    color: #000; /* ou garde #9cdcfe si tu veux la couleur bleue */
+    color: #000;
   }
     
     </style> 
