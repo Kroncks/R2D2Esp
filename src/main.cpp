@@ -110,8 +110,9 @@ void setup() {
     server.on("/bonsoir", HTTP_GET, handleBonsoir);
     server.on("/readme", HTTP_GET, handleReadme);
 
-    // envoie de commandes 
+    // envoi de commandes 
     server.on("/controls", HTTP_GET, handleControls);
+    server.on("/settings", HTTP_GET, handleSettings);
 
     // execution des commandes 
     server.on("/comand", HTTP_POST, handleComand); 

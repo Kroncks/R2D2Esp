@@ -15,3 +15,7 @@ void handleBonsoir() {
 void handleControls() {
     server.send(200, "text/html", PAGE_controls);
 }
+
+void handleSettings() {
+    server.send(200, "text/html", PAGE_settings);
+}
