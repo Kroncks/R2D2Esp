@@ -105,12 +105,16 @@ void setup() {
     WiFi.mode(WIFI_AP);                 // Configure l'ESP32 en wifi 
     WiFi.softAP(ssid, password, 1);     
     
+    // affichage 
     server.on("/", HTTP_GET, handleRoot);
     server.on("/bonsoir", HTTP_GET, handleBonsoir);
     server.on("/readme", HTTP_GET, handleReadme);
 
-    server.on("/controls", HTTP_GET, handleControls); // affichage 
-    server.on("/comand", HTTP_POST, handleComand); // envoi des comandes 
+    // envoie de commandes 
+    server.on("/controls", HTTP_GET, handleControls);
+
+    // execution des commandes 
+    server.on("/comand", HTTP_POST, handleComand); 
     
     server.begin();
 
