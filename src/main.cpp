@@ -1,11 +1,13 @@
 #include <WiFi.h>
-#include <WebServer.h>
 #include <esp_wifi.h> // Pour esp_wifi_ap_get_sta_list
 #include <lwip/inet.h> // Pour IP conversion
 
 #include "pages.h"
 
+WebServer server(80);
+
 #define LED 2
+
 
 const char* ssid = "R2D2";  
 const char* password = "BONSOIRS";     
@@ -29,28 +31,6 @@ const int puissance_tourne_recul_large = 30; // puissance de la roue externe au 
 const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au virage
 
 // ==========================================
-
-
-
-WebServer server(80);
-
-//Pages 
-
-void handleReadme() {
-  server.send(200, "text/html", PAGE_readme);
-}
-
-void handleRoot() {
-  server.send(200, "text/html", PAGE_root);
-}
-
-void handleBonsoir() {
-  server.send(200, "text/html", PAGE_bonsoir);
-}
-
-void handleControls() {
-    server.send(200, "text/html", PAGE_controls);
-}
 
 
 // gestion des commandes entrantes 
@@ -113,13 +93,7 @@ void handleComand() {
         server.send(400, "text/plain", "Commande manquante");
     }
 }
-
-
-
-
-
 //=====
-
 
 
 // Configuration initiale 
