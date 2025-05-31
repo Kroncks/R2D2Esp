@@ -36,11 +36,10 @@ const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au 
 // gestion des commandes entrantes 
 
 void handleComand() {
-    if (server.hasArg("command")) {          // Vérifie si une commande a été envoyée
-        String command = server.arg("command");  // Récupère la commande
+    if (server.hasArg("deplacement")) {          // Vérifie si une commande deplacement a été envoyée
+        String command = server.arg("deplacement");  // Récupère la commande
 
         // les moteurs sont inversés, merci la meca 
-
 
         if (command == "test"){ // petit test avec 
             digitalWrite(LED,HIGH);
@@ -89,6 +88,24 @@ void handleComand() {
 
         // Confirmation d'exécution de la commande
         server.send(200, "text/plain", "Commande exécutée");
+
+    } else if (server.hasArg("settings")) {          // Vérifie si une commande settings
+      String command = server.arg("settings");  // Récupère la commande
+
+      if (command == "test"){ // petit test avec 
+            digitalWrite(LED,HIGH);
+
+      } else if (command == "stop") {      // Commande pour arrêter les moteurs
+            digitalWrite(LED,LOW); //eteins la led de controle
+            
+      }else {                             // Si la commande est inconnue
+            server.send(400, "text/plain", "Commande invalide");
+            return;
+      }
+
+      // Confirmation d'exécution de la commande
+      server.send(200, "text/plain", "Commande exécutée");
+
     } else {                                 // Si aucune commande n'a été envoyée
         server.send(400, "text/plain", "Commande manquante");
     }

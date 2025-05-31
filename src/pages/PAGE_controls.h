@@ -152,7 +152,7 @@ const char PAGE_controls[] = R"rawliteral(
       fetch('/comand', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'command=' + command,
+        body: 'deplacement=' + command,
       }).catch(() => {
         alert('Erreur lors de l\'envoi de la commande.');
       });

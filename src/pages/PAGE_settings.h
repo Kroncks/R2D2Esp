@@ -5,9 +5,63 @@ const char PAGE_settings[] = R"rawliteral(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Settings</title>
+  <style>
+  .button {
+      background-color:rgb(86, 86, 86);
+      color: #fff;
+      font-size: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color:rgb(18, 150, 150);
+    }
+  </style>
 </head>
 <body>
 <h1>Bonsoir</h1>
+<button onclick="window.location.href = '/';">Home</button>
+<button class="button" id="test">test</button>
+<script>
+    // Références aux éléments
+    const testButton = document.getElementById('test');
+
+    // Fonction pour envoyer une commande
+    function sendCommand(command) {
+      fetch('/comand', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'settings=' + command,
+      }).catch(() => {
+        alert('Erreur lors de l\'envoi de la commande.');
+      });
+    }
+
+    testButton.addEventListener('mousedown', () => {
+      sendCommand('test');
+    });
+
+    testButton.addEventListener('mouseup', () => {
+      sendCommand('stop');
+    });
+
+    //  écrans tactiles 
+    testButton.addEventListener('touchstart', () => {
+      sendCommand('test');
+    });
+
+    testButton.addEventListener('touchend', () => {
+      sendCommand('stop');
+    });
+
+  </script>
 </body>
 </html>
   )rawliteral";

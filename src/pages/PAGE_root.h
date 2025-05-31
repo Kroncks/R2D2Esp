@@ -7,6 +7,7 @@ const char PAGE_root[] = R"rawliteral(
     <h1>Bonsoir jeune Padawan !</h1>
     <button onclick="window.location.href = '/readme';">Readme</button>
     <button onclick="window.location.href = '/controls';">Controles</button>
+    <button onclick="window.location.href = '/settings';">Parametres</button>
     <p>Le R2D2 roulera-t-il pour le 3 juin ???</p>
     <p>Ayaaaaaaa...</p>
     </body></html>
