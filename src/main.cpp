@@ -12,6 +12,7 @@ WebServer server(80);
 const char* ssid = "R2D2";  
 const char* password = "BONSOIRS";     
 
+int toggle = 0;
 
 // =========   puissance (0-62)   =========
 
@@ -36,6 +37,7 @@ const int puissance_tourne_recul_court = 20; // puissance de la roue intenre au 
 // gestion des commandes entrantes 
 
 void handleComand() {
+  // DEPLACEMENT
     if (server.hasArg("deplacement")) {          // Vérifie si une commande deplacement a été envoyée
         String command = server.arg("deplacement");  // Récupère la commande
 
@@ -89,6 +91,8 @@ void handleComand() {
         // Confirmation d'exécution de la commande
         server.send(200, "text/plain", "Commande exécutée");
 
+
+    // SETTINGS
     } else if (server.hasArg("settings")) {          // Vérifie si une commande settings
       String command = server.arg("settings");  // Récupère la commande
 
@@ -97,7 +101,13 @@ void handleComand() {
 
       } else if (command == "stop") {      // Commande pour arrêter les moteurs
             digitalWrite(LED,LOW); //eteins la led de controle
+      
+      } else if (command == "toggle") {      // Commande pour arrêter les moteurs
+        toggle = !toggle;
             
+        if (toggle)  digitalWrite(LED,HIGH); //allume la led de controle
+        else         digitalWrite(LED,LOW); //eteins la led de controle
+
       }else {                             // Si la commande est inconnue
             server.send(400, "text/plain", "Commande invalide");
             return;
@@ -106,6 +116,8 @@ void handleComand() {
       // Confirmation d'exécution de la commande
       server.send(200, "text/plain", "Commande exécutée");
 
+
+    // WTF ?
     } else {                                 // Si aucune commande n'a été envoyée
         server.send(400, "text/plain", "Commande manquante");
     }

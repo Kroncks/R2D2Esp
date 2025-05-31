@@ -29,9 +29,11 @@ const char PAGE_settings[] = R"rawliteral(
 <h1>Bonsoir</h1>
 <button onclick="window.location.href = '/';">Home</button>
 <button class="button" id="test">test</button>
+<button class="button" id="toggle">toggle</button>
 <script>
     // Références aux éléments
     const testButton = document.getElementById('test');
+    const toggleButton = document.getElementById('toggle');
 
     // Fonction pour envoyer une commande
     function sendCommand(command) {
@@ -51,6 +53,9 @@ const char PAGE_settings[] = R"rawliteral(
     testButton.addEventListener('mouseup', () => {
       sendCommand('stop');
     });
+    toggleButton.addEventListener('mouseup', () => {
+      sendCommand('toggle');
+    });
 
     //  écrans tactiles 
     testButton.addEventListener('touchstart', () => {
@@ -59,6 +64,9 @@ const char PAGE_settings[] = R"rawliteral(
 
     testButton.addEventListener('touchend', () => {
       sendCommand('stop');
+    });
+    toggleButton.addEventListener('touchend', () => {
+      sendCommand('toggle');
     });
 
   </script>
