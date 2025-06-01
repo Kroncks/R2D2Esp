@@ -133,13 +133,13 @@ const char PAGE_controls[] = R"rawliteral(
         <button class="button" id="recright">↘︎</button>
       </div>
     </div>
-  </div>
-  <h1>Tete</h1>
-  <div class="direction-buttons">
+    <h1>Tete</h1>
+    <div class="direction-buttons">
       <div class="button-row">
         <button class="button" id="teteleft">←</button>
         <button class="button" id="teteright">→</button>
-      </div>
+    </div>
+  </div>
   </div>
   <script>
     // Références aux éléments
