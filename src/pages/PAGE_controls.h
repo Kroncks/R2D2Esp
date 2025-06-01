@@ -69,7 +69,7 @@ const char PAGE_controls[] = R"rawliteral(
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .button-row {
