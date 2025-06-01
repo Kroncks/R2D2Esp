@@ -7,7 +7,8 @@
 WebServer server(80);
 
 #define LED 2
-
+#define TETE_GAUCHE 22
+#define TETE_DROITE 23
 
 const char* ssid = "R2D2";  
 const char* password = "BONSOIRS";     
@@ -76,6 +77,16 @@ void handleComand() {
         }else if (command == "avancer") {   // Commande pour avancer
             Serial2.write(63-puissance_avant);  // Moteur 1 avance 
             Serial2.write(191-puissance_avant); // Moteur 2 avance
+        
+
+        }else if (command == "tetedroite") {   // Commande pour tourner la tete a droite
+            digitalWrite(TETE_GAUCHE, LOW);
+            digitalWrite(TETE_DROITE, HIGH);
+
+        }else if (command == "tetegauche") {   // Commande pour tourner la tete a gauche
+            digitalWrite(TETE_DROITE, LOW);
+            digitalWrite(TETE_GAUCHE, HIGH);
+
 
         } else if (command == "stop") {      // Commande pour arrêter les moteurs
             Serial2.write(64);  // Stop moteur 1
@@ -96,7 +107,7 @@ void handleComand() {
     } else if (server.hasArg("settings")) {          // Vérifie si une commande settings
       String command = server.arg("settings");  // Récupère la commande
 
-      if (command == "test"){ // petit test avec 
+      if (command == "test"){ // petit test 
             digitalWrite(LED,HIGH);
 
       } else if (command == "stop") {      // Commande pour arrêter les moteurs
@@ -128,6 +139,8 @@ void handleComand() {
 // Configuration initiale 
 void setup() {
     pinMode(LED,OUTPUT); // led de controle
+    pinMode(TETE_DROITE, OUTPUT);
+    pinMode(TETE_GAUCHE, OUTPUT);
 
     Serial2.begin(9600); // RX = 16 / TX = 17
 

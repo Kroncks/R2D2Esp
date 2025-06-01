@@ -134,7 +134,13 @@ const char PAGE_controls[] = R"rawliteral(
       </div>
     </div>
   </div>
-
+  <h1>Tete</h1>
+  <div class="direction-buttons">
+      <div class="button-row">
+        <button class="button" id="teteleft">←</button>
+        <button class="button" id="teteright">→</button>
+      </div>
+  </div>
   <script>
     // Références aux éléments
     const testButton = document.getElementById('test');
@@ -146,6 +152,9 @@ const char PAGE_controls[] = R"rawliteral(
     const recleftButton = document.getElementById('recleft');
     const rightButton = document.getElementById('right');
     const recrightButton = document.getElementById('recright');
+
+    const teteleftButton = document.getElementById('teteleft');
+    const teterightButton = document.getElementById('teteright');
 
     // Fonction pour envoyer une commande
     function sendCommand(command) {
@@ -187,6 +196,12 @@ const char PAGE_controls[] = R"rawliteral(
     recleftButton.addEventListener('mousedown', () => {
       sendCommand('recgauche');
     });
+    teterightButton.addEventListener('mousedown', () => {
+      sendCommand('tetedroite');
+    });
+    teteleftButton.addEventListener('mousedown', () => {
+      sendCommand('tetegauche');
+    });
     
     // Arrêter le robot dès que la flèche est relâchée
     testButton.addEventListener('mouseup', () => {
@@ -216,7 +231,12 @@ const char PAGE_controls[] = R"rawliteral(
     recleftButton.addEventListener('mouseup', () => {
       sendCommand('stop');
     });
-
+    teterightButton.addEventListener('mouseup', () => {
+      sendCommand('stop');
+    });
+    teteleftButton.addEventListener('mouseup', () => {
+      sendCommand('stop');
+    });
 
     // Pour les écrans tactiles (gestion du touchend)
     testButton.addEventListener('touchstart', () => {
@@ -246,6 +266,12 @@ const char PAGE_controls[] = R"rawliteral(
     recleftButton.addEventListener('touchstart', () => {
       sendCommand('recgauche');
     });
+    teterightButton.addEventListener('touchstart', () => {
+      sendCommand('tetedroite');
+    });
+    teteleftButton.addEventListener('touchstart', () => {
+      sendCommand('tetegauche');
+    });
 
     testButton.addEventListener('touchend', () => {
       sendCommand('stop');
@@ -274,7 +300,12 @@ const char PAGE_controls[] = R"rawliteral(
     recleftButton.addEventListener('touchend', () => {
       sendCommand('stop');
     });
-
+    teterightButton.addEventListener('touchend', () => {
+      sendCommand('stop');
+    });
+    teteleftButton.addEventListener('touchend', () => {
+      sendCommand('stop');
+    });
 
   </script>
 </body>
