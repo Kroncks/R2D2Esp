@@ -27,9 +27,14 @@ const char PAGE_settings[] = R"rawliteral(
 </head>
 <body>
 <h1>Bonsoir</h1>
+<div>
 <button onclick="window.location.href = '/';">Home</button>
+</div>
+<p>Controles<p>
+<div>
 <button class="button" id="test">test</button>
 <button class="button" id="toggle">toggle</button>
+</div>
 <script>
     // Références aux éléments
     const testButton = document.getElementById('test');

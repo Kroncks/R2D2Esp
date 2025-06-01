@@ -105,7 +105,7 @@ void handleComand() {
       } else if (command == "toggle") {      // Commande pour arrêter les moteurs
         toggle = !toggle;
             
-        if (toggle)  digitalWrite(LED,HIGH); //allume la led de controle
+        if (toggle)  digitalWrite(LED,HIGH); //eteins la led de controle
         else         digitalWrite(LED,LOW); //eteins la led de controle
 
       }else {                             // Si la commande est inconnue
