@@ -92,6 +92,10 @@ void handleComand() {
             Serial2.write(64);  // Stop moteur 1
             Serial2.write(192); // Stop moteur 2
 
+            // arete la tete 
+            digitalWrite(TETE_GAUCHE, LOW);
+            digitalWrite(TETE_DROITE, LOW);
+
             digitalWrite(LED,LOW); //eteins la led de controle
 
         }else {                             // Si la commande est inconnue
