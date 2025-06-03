@@ -7,6 +7,7 @@
 WebServer server(80);
 
 #define LED 2
+#define CLIGNOTE 4
 #define TETE_GAUCHE 22
 #define TETE_DROITE 23
 
@@ -14,6 +15,11 @@ const char* ssid = "R2D2";
 const char* password = "BONSOIRS";     
 
 int toggle = 0;
+
+// Gestion du clignotement LED
+unsigned long previousMillis = 0;
+const long interval = 500; // Intervalle de clignotement en millisecondes
+bool ledState = false;
 
 // =========   puissance (0-62)   =========
 
@@ -143,6 +149,7 @@ void handleComand() {
 // Configuration initiale 
 void setup() {
     pinMode(LED,OUTPUT); // led de controle
+    pinMode(CLIGNOTE,OUTPUT);
     pinMode(TETE_DROITE, OUTPUT);
     pinMode(TETE_GAUCHE, OUTPUT);
 
@@ -172,4 +179,12 @@ void setup() {
 
 void loop() {
   server.handleClient();
+
+  // Gestion du clignotement de la LED
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+    ledState = !ledState;
+    digitalWrite(CLIGNOTE, ledState);
+  }
 }
